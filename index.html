@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Solar System</title>
+    <style>
+      #emergency-earth-button {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 8px 12px;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        transition: all 0.3s ease;
+      }
+
+      #emergency-earth-button:hover {
+        background-color: #4CAF50;
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      #emergency-earth-info {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 600px;
+        max-height: 80vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 100, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        z-index: 10001;
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      #emergency-earth-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: linear-gradient(to right, rgba(30, 30, 60, 0.8), rgba(60, 30, 60, 0.8));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      #emergency-earth-header h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        background: linear-gradient(to right, #ffffff, #a0a0ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 10px rgba(100, 100, 255, 0.5);
+      }
+
+      #emergency-earth-content {
+        padding: 20px;
+        overflow-y: auto;
+        max-height: calc(80vh - 60px);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+      }
+
+      .earth-section {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .earth-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .earth-section h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        color: #a0c0ff;
+      }
+
+      #emergency-close-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      #emergency-close-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Earth Info Button removed -->
+
+    <!-- Earth Info Panel -->
+    <div id="emergency-earth-info">
+      <div id="emergency-earth-header">
+        <h2>Earth</h2>
+        <button id="emergency-close-button" onclick="closeEarthInfo()">×</button>
+      </div>
+
+      <div id="emergency-earth-content">
+        <div class="earth-section">
+          <h3>Physical Characteristics</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Type</div>
+              <div class="info-value">Terrestrial planet</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Diameter</div>
+              <div class="info-value">12,742 km</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Mass</div>
+              <div class="info-value">5.97237 × 10^24 kg</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Temperature</div>
+              <div class="info-value">-88°C to 58°C (average: 15°C)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="earth-section">
+          <h3>Composition</h3>
+          <p>Iron-nickel core, Silicate mantle, Crust (continental and oceanic)</p>
+        </div>
+
+        <div class="earth-section">
+          <h3>Orbit & Rotation</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Distance from Sun</div>
+              <div class="info-value">1 AU (149.6 million km)</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Orbital Period</div>
+              <div class="info-value">365.25 days</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Rotation Period</div>
+              <div class="info-value">23.93 hours</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="earth-section">
+          <h3>Atmosphere</h3>
+          <p>Nitrogen (78%), Oxygen (21%), Argon, Carbon dioxide, Water vapor</p>
+        </div>
+
+        <div class="earth-section">
+          <h3>Interesting Facts</h3>
+          <ul id="earth-facts">
+            <li>Earth is the only planet not named after a god</li>
+            <li>Earth has one natural satellite - the Moon</li>
+            <li>Earth's magnetic field protects us from harmful solar radiation</li>
+            <li>Earth is the densest planet in the Solar System</li>
+            <li>Earth is approximately 4.54 billion years old</li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        function closeEarthInfo() {
+          // Hide the panel
+          document.getElementById('emergency-earth-info').style.display = 'none';
+
+          // Reset Earth scale and resume orbits
+          // This will be called from the main.js file
+          if (window.hidePlanetInfo) {
+            window.hidePlanetInfo();
+          }
+        }
+      </script>
+    </div>
+    <div id="app">
+      <div id="scene-container"></div>
+      <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Loading Solar System...</p>
+      </div>
+      <div id="detailed-info-panel" class="hidden">
+        <div class="panel-header">
+          <h2 id="planet-name">Planet Name</h2>
+          <button id="close-panel">×</button>
+        </div>
+        <div class="panel-content">
+          <div class="panel-section">
+            <h3>Physical Characteristics</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Type:</span>
+                <span id="planet-type" class="info-value">Type</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Diameter:</span>
+                <span id="planet-diameter" class="info-value">Diameter</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Mass:</span>
+                <span id="planet-mass" class="info-value">Mass</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Temperature:</span>
+                <span id="planet-temp" class="info-value">Temperature</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel-section">
+            <h3>Composition</h3>
+            <p id="planet-composition">Composition details</p>
+          </div>
+          <div class="panel-section">
+            <h3>Orbit & Rotation</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Distance from Sun:</span>
+                <span id="planet-distance" class="info-value">Distance</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Orbital Period:</span>
+                <span id="planet-orbital-period" class="info-value">Orbital Period</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Rotation Period:</span>
+                <span id="planet-rotation-period" class="info-value">Rotation Period</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel-section">
+            <h3>Atmosphere</h3>
+            <p id="planet-atmosphere">Atmosphere details</p>
+          </div>
+          <div class="panel-section">
+            <h3>Interesting Facts</h3>
+            <ul id="planet-facts">
+              <!-- Facts will be populated dynamically -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="info-panel">
+        <h1>3D Solar System</h1>
+        <p>Click on any planet to learn more about it</p>
+      </div>
+
+      <!-- Removed unused Earth info panels -->
+      <div id="camera-presets">
+        <button data-preset="overview">Overview</button>
+        <button data-preset="top">Top View</button>
+        <button data-preset="side">Side View</button>
+        <button data-preset="sun">Sun</button>
+        <button data-preset="earth">Earth</button>
+      </div>
+
+      <div id="planet-buttons">
+        <h3>Planet Information</h3>
+        <div class="button-grid">
+          <button data-planet="Sun">Sun</button>
+          <button data-planet="Mercury">Mercury</button>
+          <button data-planet="Venus">Venus</button>
+          <button data-planet="Earth">Earth</button>
+          <button data-planet="Mars">Mars</button>
+          <button data-planet="Jupiter">Jupiter</button>
+          <button data-planet="Saturn">Saturn</button>
+          <button data-planet="Uranus">Uranus</button>
+          <button data-planet="Neptune">Neptune</button>
+        </div>
+      </div>
+      <div id="audio-controls">
+        <button id="toggle-audio">🔊</button>
+      </div>
+      <div id="time-controls">
+        <button id="pause-play">⏸️</button>
+        <button id="speed-down">🐢</button>
+        <div id="speed-indicator">1x</div>
+        <button id="speed-up">🐇</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

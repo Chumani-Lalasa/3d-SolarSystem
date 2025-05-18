@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 100, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        
+        h2 {
+            color: #a0c0ff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        p {
+            line-height: 1.6;
+        }
+        
+        .fact-list {
+            padding-left: 20px;
+        }
+        
+        .fact-list li {
+            margin-bottom: 10px;
+        }
+        
+        .earth-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.5);
+        }
+        
+        .back-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earth</h1>
+        
+        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Earth from space" class="earth-image">
+        
+        <h2>Physical Characteristics</h2>
+        <p><strong>Type:</strong> Terrestrial planet</p>
+        <p><strong>Diameter:</strong> 12,742 km</p>
+        <p><strong>Mass:</strong> 5.97237 × 10^24 kg</p>
+        <p><strong>Temperature:</strong> -88°C to 58°C (average: 15°C)</p>
+        
+        <h2>Composition</h2>
+        <p>Iron-nickel core, Silicate mantle, Crust (continental and oceanic)</p>
+        <p>Earth's interior is divided into layers by their chemical or physical properties, with a core composed primarily of iron and nickel. The mantle, which surrounds the core, is composed of silicate rocks rich in iron and magnesium. The crust, the outermost layer, is the thinnest layer of the Earth.</p>
+        
+        <h2>Orbit & Rotation</h2>
+        <p><strong>Distance from Sun:</strong> 1 AU (Astronomical Unit) - approximately 149.6 million km</p>
+        <p><strong>Orbital Period:</strong> 365.25 days</p>
+        <p><strong>Rotation Period:</strong> 23.93 hours</p>
+        <p>Earth orbits the Sun at an average distance of about 149.6 million km, completing one orbit every 365.25 days. This orbital period is what we define as a year. Earth rotates on its axis once every 23.93 hours, defining our day.</p>
+        
+        <h2>Atmosphere</h2>
+        <p>Nitrogen (78%), Oxygen (21%), Argon, Carbon dioxide, Water vapor</p>
+        <p>Earth's atmosphere is a layer of gases surrounding the planet that is retained by Earth's gravity. It protects life on Earth by creating pressure allowing for liquid water to exist on the Earth's surface, absorbing ultraviolet solar radiation, warming the surface through heat retention, and reducing temperature extremes between day and night.</p>
+        
+        <h2>Interesting Facts</h2>
+        <ul class="fact-list">
+            <li>Earth is the only planet not named after a god. The name "Earth" comes from the Old English word "eorthe" and the Anglo-Saxon word "erda," which means ground or soil.</li>
+            <li>Earth has one natural satellite - the Moon, which is about a quarter of Earth's diameter.</li>
+            <li>Earth's magnetic field protects us from harmful solar radiation and is generated by the movement of molten iron in the outer core.</li>
+            <li>Earth is the densest planet in the Solar System with an average density of 5.51 g/cm³.</li>
+            <li>Earth is approximately 4.54 billion years old, having formed from the solar nebula through accretion.</li>
+            <li>About 71% of Earth's surface is covered with water, mostly by oceans but also by lakes, rivers, and other fresh water, which together constitute the hydrosphere.</li>
+            <li>Earth is the only planet known to support life, with its biodiversity organized into ecosystems that comprise the biosphere.</li>
+        </ul>
+        
+        <button class="back-button" onclick="window.close()">Close</button>
+    </div>
+</body>
+</html>
