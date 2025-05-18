@@ -138,11 +138,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👤 Author
 
-Your Name - [Your LinkedIn](https://linkedin.com/in/yourprofile) - your.email@example.com
+M Chumani Lalasa - (https://www.linkedin.com/in/chumani-lalasa-45a0102a7/) - chumanilalasa@gmail.com
 
 ## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/3d-solar-system/issues).
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
