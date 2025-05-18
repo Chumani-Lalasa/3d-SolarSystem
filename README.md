@@ -15,7 +15,7 @@ An interactive 3D visualization of our solar system built with Three.js, featuri
 
 ## 🚀 Live Demo
 
-Check out the live demo: [3D Solar System](https://your-netlify-url.netlify.app)
+Check out the live demo: [3D Solar System](https://fascinating-trifle-6729e5.netlify.app/)
 
 ## 🛠️ Technologies Used
 
@@ -149,5 +149,3 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-Deployed Link: https://fascinating-trifle-6729e5.netlify.app/
